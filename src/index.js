@@ -8,7 +8,6 @@ const hero = {
   defence: 40,
 };
 
-const order = ['health', 'name', 'level'];
-
+const order = ['health', 'name'];
 
 console.log(sorting(order, hero));

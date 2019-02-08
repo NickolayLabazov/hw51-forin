@@ -1,17 +1,9 @@
-export const sorting = (array, obj) => {
+/* export const sorting = (array, obj) => {
   const propertyForAZ = [];
-
   for (const prop in obj) {
-    let f = 0;
-    for (const elem of array) {
-      if (prop == elem) {
-        f++;
-      }
-    }
-    if (f == 0) {
-      propertyForAZ.push(prop);
-    }
+    propertyForAZ.push(prop);
   }
+
   function compare(a, b) {
     if (a > b) {
       return 1;
@@ -19,8 +11,51 @@ export const sorting = (array, obj) => {
 
     return -1;
   }
+
+  let propertyAZ = propertyForAZ.sort(compare);
+
+    for (const element of array){
+      propertyAZ = propertyAZ.filter(elem => elem != element);
+    }
+    array =array.concat(propertyAZ);
+
+    let property=[];
+
+  for (const elem of array){
+    const newobj = {
+      key: elem,
+      value: obj[elem],
+    };
+    property.push(newobj);
+  }
+
+  return property;
+}; */
+
+export const sorting = (array, obj) => {
+  const propertyForAZ = [];
+  for (const prop in obj) {
+    propertyForAZ.push(prop);
+  }
+
+  function compare(a, b) {
+    if (a > b) {
+      return 1;
+    }
+
+    return -1;
+  }
+
   const propertyAZ = propertyForAZ.sort(compare);
+
+  for (const element of propertyAZ) {
+    if (array.indexOf(element) < 0) {
+      array.push(element);
+    }
+  }
+
   const property = [];
+
   for (const elem of array) {
     const newobj = {
       key: elem,
@@ -28,12 +63,6 @@ export const sorting = (array, obj) => {
     };
     property.push(newobj);
   }
-  for (const elem of propertyAZ) {
-    const newobj = {
-      key: elem,
-      value: obj[elem],
-    };
-    property.push(newobj);
-  }
+
   return property;
 };

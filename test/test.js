@@ -19,7 +19,7 @@ test('Входной массив из 0 элементов ', () => {
     { key: 'name', value: 'мечник' },
   ];
   const received = sorting(order, hero);
-  expect(received).toEqual(received);
+  expect(received).toEqual(expected);
 });
 
 test('Входной массив из 1 элемента ', () => {
@@ -41,7 +41,7 @@ test('Входной массив из 1 элемента ', () => {
     { key: 'name', value: 'мечник' },
   ];
   const received = sorting(order, hero);
-  expect(received).toEqual(received);
+  expect(received).toEqual(expected);
 });
 
 test('Входной массив из 3 элементов ', () => {
@@ -63,7 +63,7 @@ test('Входной массив из 3 элементов ', () => {
     { key: 'defence', value: 40 },
   ];
   const received = sorting(order, hero);
-  expect(received).toEqual(received);
+  expect(received).toEqual(expected);
 });
 
 test('Входной массив из 5 элементов ', () => {
@@ -85,5 +85,5 @@ test('Входной массив из 5 элементов ', () => {
     { key: 'attack', value: 80 },
   ];
   const received = sorting(order, hero);
-  expect(received).toEqual(received);
+  expect(received).toEqual(expected);
 });

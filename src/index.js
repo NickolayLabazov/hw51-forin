@@ -1,4 +1,4 @@
-import { sorting } from './function';
+import sorting from './function';
 
 const hero = {
   name: 'мечник',

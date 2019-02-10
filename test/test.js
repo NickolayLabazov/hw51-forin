@@ -1,4 +1,4 @@
-import { sorting } from '../src/function';
+import sorting from '../src/function';
 
 test('Входной массив из 0 элементов ', () => {
   const hero = {

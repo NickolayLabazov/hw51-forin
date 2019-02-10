@@ -1,4 +1,4 @@
-/* export const sorting = (array, obj) => {
+export default function sorting(array, obj) {
   const propertyForAZ = [];
   for (const prop in obj) {
     propertyForAZ.push(prop);
@@ -14,14 +14,14 @@
 
   let propertyAZ = propertyForAZ.sort(compare);
 
-    for (const element of array){
-      propertyAZ = propertyAZ.filter(elem => elem != element);
-    }
-    array =array.concat(propertyAZ);
+  for (const element of array) {
+    propertyAZ = propertyAZ.filter(elem => elem !== element);
+  }
+  array = array.concat(propertyAZ);
 
-    let property=[];
+  const property = [];
 
-  for (const elem of array){
+  for (const elem of array) {
     const newobj = {
       key: elem,
       value: obj[elem],
@@ -30,9 +30,9 @@
   }
 
   return property;
-}; */
+}
 
-export const sorting = (array, obj) => {
+/* export default function sorting(array, obj){
   const propertyForAZ = [];
   for (const prop in obj) {
     propertyForAZ.push(prop);
@@ -66,3 +66,4 @@ export const sorting = (array, obj) => {
 
   return property;
 };
+ */

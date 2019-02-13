@@ -3,6 +3,7 @@
     "rules": {
         "guard-for-in": "off",
         "no-restricted-syntax": "off",
+        "no-undef": "off",
         "no-param-reassign": "off"
         
      }

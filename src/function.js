@@ -1,27 +1,17 @@
 export default function sorting(array, obj) {
-  const propertyForAZ = [];
-  for (const prop in obj) {
-    propertyForAZ.push(prop);
+  const propertyForAZ = Object.keys(obj); // создаю массив свойств входного объекта
+
+  for (const elem of array) { // перебираю элементы массива приоритетных свойств(array), для отсеивания их из общего массива propertyForAZ
+    const number = propertyForAZ.indexOf(elem); // определяю номера number приоритетных свойства в propertyForAZ
+    propertyForAZ.splice(number, 1); // Удаляю из propertyForAZ элементы массива array
   }
 
-  function compare(a, b) {
-    if (a > b) {
-      return 1;
-    }
-
-    return -1;
-  }
-
-  let propertyAZ = propertyForAZ.sort(compare);
-
-  for (const element of array) {
-    propertyAZ = propertyAZ.filter(elem => elem !== element);
-  }
-  array = array.concat(propertyAZ);
+  const propertyAZ = propertyForAZ.sort(); // cортировки по алфавиту массива свойств
+  array = array.concat(propertyAZ); // объединяю массив приоритетных свойств с массивом остальных свойств, выстроенных по алфавиту
 
   const property = [];
 
-  for (const elem of array) {
+  for (const elem of array) { // формирую итоговый массив из обьектов, выстроенных в порядке, определенном array
     const newobj = {
       key: elem,
       value: obj[elem],
@@ -31,39 +21,3 @@ export default function sorting(array, obj) {
 
   return property;
 }
-
-/* export default function sorting(array, obj){
-  const propertyForAZ = [];
-  for (const prop in obj) {
-    propertyForAZ.push(prop);
-  }
-
-  function compare(a, b) {
-    if (a > b) {
-      return 1;
-    }
-
-    return -1;
-  }
-
-  const propertyAZ = propertyForAZ.sort(compare);
-
-  for (const element of propertyAZ) {
-    if (array.indexOf(element) < 0) {
-      array.push(element);
-    }
-  }
-
-  const property = [];
-
-  for (const elem of array) {
-    const newobj = {
-      key: elem,
-      value: obj[elem],
-    };
-    property.push(newobj);
-  }
-
-  return property;
-};
- */

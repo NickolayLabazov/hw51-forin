@@ -4,6 +4,7 @@
         "guard-for-in": "off",
         "no-restricted-syntax": "off",
         "no-undef": "off",
+        "max-len": "off",
         "no-param-reassign": "off"
         
      }
